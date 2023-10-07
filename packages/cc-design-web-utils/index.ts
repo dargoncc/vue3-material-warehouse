@@ -1,10 +1,10 @@
-export const withInstall = (component: any) => {
-    component.install = (app: any) => {
-        app.component(component.name, component);
-    };
-    return component;
-};
+import type { App, Plugin } from "vue";
+type SFCWithInstall<T> = T & Plugin;
 
-const obj = {
-    a: '1',
+export const withInstall = <T>(component: T) => {
+    (component as SFCWithInstall<T>).install = (app: App) => {
+        const name = (component as any).name || ''
+        app.component(name, component as SFCWithInstall<T>);
+    };
+    return component as SFCWithInstall<T>;
 };

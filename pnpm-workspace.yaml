@@ -1,3 +1,4 @@
+# 定义workspace 在哪个目录
 packages:
- - 'package/*'
+ - 'packages/*'
  - 'examples/*'

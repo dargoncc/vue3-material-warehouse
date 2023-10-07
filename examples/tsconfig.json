@@ -1,0 +1,7 @@
+{
+    "extends": "../tsconfig.json",
+    "compilerOptions": {
+        "types": ["@cc-design/web"]
+    },
+    "include": ["../packages/cc-design-web/src/*"],
+}
